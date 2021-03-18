@@ -1,0 +1,10 @@
+#!/bin/sh
+
+usage() {
+	>&2 echo 'usage: apps-menu file'
+	exit 1
+}
+
+[ "$1" ] || usage
+
+cat "$1" | sort | sed '/^$/d' | bemenu -p 'Apps' | xargs swaymsg exec

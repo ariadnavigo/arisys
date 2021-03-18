@@ -1,0 +1,16 @@
+#!/bin/sh
+
+the_date=$(date +'%Y-%m-%d %H:%M %p')
+
+audio_status=$(amixer sget Master | tail -n1 | \
+               sed -E 's/.*\[(.*%)\].*\[(on|off)\].*/\1 \2/')
+
+wifi_status=$(iwctl station wlan0 show | grep 'Connected network' | \
+              sed -E 's/^.*Connected network[[:space:]]*//;
+                      s/[[:space:]]*?$//')
+! [ "$wifi_status" ] && wifi_status='--'
+
+cras_status=$(NO_COLOR=1 cras -O 2>/dev/null)
+[ $? -gt 0 ] && cras_status='--'
+
+echo "| $cras_status | wifi: $wifi_status | audio: $audio_status | $the_date"
