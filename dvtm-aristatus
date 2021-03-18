@@ -5,7 +5,7 @@ FIFO="/tmp/dvtm-status.$$"
 [ -p "$FIFO" ] || mkfifo -m 600 "$FIFO" || exit 1
 
 while true; do
-	statusbar
+	aristatus
 	sleep 1
 done > "$FIFO" &
 
