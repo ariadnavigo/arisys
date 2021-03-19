@@ -11,6 +11,6 @@ case "$1" in
 esac
 
 url=$(sfeed_plain "$HOME/.sfeed/feeds/"* | sort -r -k 1 | \
-      bemenu -p 'Feeds' -l 20 -i | \ 
+      bemenu -p 'Feeds' -l 20 -i | \
       sed -n 's@^.* \([a-zA-Z]*://\)\(.*\)$@\1\2@p')
 [ "$url" ] && xdg-open "$url"
