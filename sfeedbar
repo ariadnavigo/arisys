@@ -6,11 +6,11 @@ usage() {
 }
 
 case "$1" in
-	-u) sfeed_update ;;
+	-u) sfeed_update "$HOME/.config/sfeed/sfeedrc" ;;
 	-*) usage ;;
 esac
 
-url=$(sfeed_plain "$HOME/.sfeed/feeds/"* | sort -r -k 1 | \
+url=$(sfeed_plain "$HOME/.cache/sfeed/feeds/"* | sort -r -k 1 | \
       bemenu -p 'Feeds' -l 20 -i | \
       sed -n 's@^.* \([a-zA-Z]*://\)\(.*\)$@\1\2@p')
 [ "$url" ] && xdg-open "$url"
