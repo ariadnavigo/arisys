@@ -1,5 +1,18 @@
 #!/bin/sh
 
+usage() {
+	echo 'usage: aristatus [-s]' >&2
+	exit 1
+}
+
+if ! [ "$1" ]; then
+	cras_flag='-O'
+elif [ "$1" = '-s' ]; then
+	cras_flag='-o'
+else
+	usage
+fi
+
 the_date=$(date +'%Y-%m-%d %H:%M %p')
 
 audio_status=$(amixer sget Master | tail -n1 | \
@@ -10,7 +23,7 @@ wifi_status=$(iwctl station wlan0 show | grep 'Connected network' | \
                       s/[[:space:]]*?$//')
 ! [ "$wifi_status" ] && wifi_status='--'
 
-cras_status=$(NO_COLOR=1 cras -O 2>/dev/null)
+cras_status=$(NO_COLOR=1 cras "$cras_flag" 2>/dev/null)
 [ $? -gt 0 ] && cras_status='--'
 
 echo "| $cras_status | wifi: $wifi_status | audio: $audio_status | $the_date"
