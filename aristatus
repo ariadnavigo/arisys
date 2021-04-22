@@ -26,9 +26,4 @@ wifi_status=$(iwctl station wlan0 show | grep 'Connected network' | \
 cras_status=$(NO_COLOR=1 cras "$cras_flag" 2>/dev/null)
 [ $? -gt 0 ] && cras_status='--'
 
-mt_out=$(find /tmp -name minitimer.out.* 2> /dev/null)
-if [ "$mt_out" ]; then
-	printf "| %s " "$(tail -n 1 $mt_out)"
-fi
-
 echo "| $cras_status | wifi: $wifi_status | audio: $audio_status | $the_date"
