@@ -5,10 +5,12 @@ usage() {
 	exit 1
 }
 
-case "$1" in
-	-u) sfeed_update "$HOME/.config/sfeed/sfeedrc" ;;
-	-*) usage ;;
-esac
+while getopts :u opt; do
+	case "$opt" in
+	u)	sfeed_update "$HOME/.config/sfeed/sfeedrc" ;;
+	?)	usage ;;
+	esac
+done
 
 url=$(sfeed_plain "$HOME/.cache/sfeed/feeds/"* | sort -r -k 1 | \
       bemenu -p 'Feeds' -l 20 -i | \
