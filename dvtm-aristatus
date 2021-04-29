@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 FIFO="/tmp/dvtm-status.$$"
 
 [ -p "$FIFO" ] || mkfifo -m 600 "$FIFO" || exit 1
@@ -14,3 +16,5 @@ dvtm -s "$FIFO" "$@" 2> /dev/null
 kill $STATUS_PID
 wait $STATUS_PID 2> /dev/null
 rm -f "$FIFO"
+
+exit 0

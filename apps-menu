@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 usage() {
 	echo 'usage: apps-menu file' >&2
 	exit 1
@@ -8,3 +10,5 @@ usage() {
 [ "$1" ] || usage
 
 cat "$1" | sort | sed '/^$/d' | bemenu -p 'Apps' | xargs swaymsg exec
+
+exit 0

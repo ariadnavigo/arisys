@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 die() {
 	echo "Error: $1" >&2
 	exit 1
@@ -12,3 +14,5 @@ sync() {
 sync
 neomutt
 sync
+
+exit 0

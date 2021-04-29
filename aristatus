@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 usage() {
 	echo 'usage: aristatus [-s]' >&2
 	exit 1
@@ -27,3 +29,5 @@ if ! cras_status=$(NO_COLOR=1 cras "${cras_flag:--O}" 2>/dev/null); then
 fi
 
 echo "| $cras_status | wifi: $wifi_status | audio: $audio_status | $the_date"
+
+exit 0
