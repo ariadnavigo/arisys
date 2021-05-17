@@ -1,33 +1,25 @@
 #!/bin/sh
 
-set -e
-
 usage() {
-	echo 'usage: aristatus [-s]' >&2
+	echo 'usage: aristatus' >&2
 	exit 1
 }
 
-while getopts :s opt; do
-	case "$opt" in
-	s)	cras_flag='-o' ;;
-	?)	usage ;;
-	esac
-done
+if cras_out=$(NO_COLOR=1 cras 2>/dev/null); then
+	cras_done=$(echo "$cras_out" | grep -c '\[DONE\]')
+	cras_tot=$(($(echo "$cras_out" | wc -l) - 1))
 
-the_date=$(date +'%Y-%m-%d %H:%M %p')
-
-audio_status=$(amixer sget Master | tail -n1 | \
-               sed -E 's/.*\[(.*%)\].*\[(on|off)\].*/\1 \2/')
-
-wifi_status=$(iwctl station wlan0 show | grep 'Connected network' | \
-              sed -E 's/^.*Connected network[[:space:]]*//;
-                      s/[[:space:]]*?$//')
-! [ "$wifi_status" ] && wifi_status='--'
-
-if ! cras_status=$(NO_COLOR=1 cras "${cras_flag:--O}" 2>/dev/null); then
-	cras_status='--'
+	cras_str="$cras_done/$cras_tot"
 fi
 
-echo "| $cras_status | wifi: $wifi_status | audio: $audio_status | $the_date"
+wifi_str=$(iwctl station wlan0 show | grep 'Connected network' | \
+           sed -E 's/^.*Connected network[[:space:]]*//; s/[[:space:]]*?$//')
+
+aud_str=$(amixer sget Master | tail -n1 | \
+          sed -E 's/.*\[(.*%)\].*\[(on|off)\].*/\1 \2/')
+
+date_str=$(date +'%Y-%m-%d %H:%M %p')
+
+echo "| ${cras_str:---} | wifi: ${wifi_str:---} | audio: $aud_str | $date_str"
 
 exit 0
