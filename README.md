@@ -54,10 +54,26 @@ Dependencies:
 1. aristatus and all its requirements (listed above)
 2. [dvtm](https://www.brain-dump.org/projects/dvtm/)
 
+## sfeedbar - sfeed integration into bemenu
+
+This scripts creates a menu from RSS feeds parsed by sfeed. It also allows 
+retrieval of updated RSS feeds.
+
+This script assumes sfeed to be set up like this, which is **not** the default
+configuration. Please refer to sfeed's documentation to set it up like this:
+
+* ``$HOME/.config/sfeed/sfeedrc``: location of sfeed's master config file
+* ``$HOME/.cache/sfeed/feeds/``: sfeed's cache.
+
+Dependencies:
+1. [sfeed](https://codemadness.org/git/sfeed/log.html)
+2. [bemenu](https://github.com/Cloudef/bemenu)
+
 ## Licenses
 
-apps-menu, arimail, and aristatus are published under an MIT/X11/Expat-type
-License. See ``LICENSE`` file for copyright and license details.
+apps-menu, arimail, aristatus, and sfeedbar are published under an 
+MIT/X11/Expat-type License. See ``LICENSE`` file for copyright and license 
+details.
 
 dvtm-aristatus is derivate work from dvtm-status, published under the MIT/X
 Consortium License. See ``dvtm-aristatus`` file for copyright and license 
