@@ -50,7 +50,7 @@ It shows information from these programs, so all of these are required:
 This is a launcher script for the dvtm terminal manager, which calls aristatus
 to print out information on the status bar.
 
-Requires:
+Dependencies:
 1. aristatus and all its requirements (listed above)
 2. [dvtm](https://www.brain-dump.org/projects/dvtm/)
 
