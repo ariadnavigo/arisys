@@ -9,7 +9,7 @@ die() {
 }
 
 sync() {
-	mbsync -a -c "$IMAP_CONFIG" || die 'Failing to sync'
+	mbsync -a -c "$IMAP_CONFIG" || die 'Failed to sync'
 }
 
 sync
