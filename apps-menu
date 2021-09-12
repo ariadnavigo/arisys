@@ -10,6 +10,6 @@ usage() {
 
 [ "$1" ] || usage
 
-cat "$1" | sort | sed '/^$/d' | bemenu -p 'Apps' | xargs swaymsg exec
+sort "$1" | sed '/^$/d' | bemenu -p 'Apps' | xargs swaymsg exec
 
 exit 0
