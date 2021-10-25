@@ -75,6 +75,6 @@ apps-menu, arimail, aristatus, and sfeedbar are published under an
 MIT/X11/Expat-type License. See ``LICENSE`` file for copyright and license 
 details.
 
-dvtm-aristatus is derivate work from dvtm-status, published under the MIT/X
+dvtm-aristatus is derivatve work from dvtm-status, published under the MIT/X
 Consortium License. See ``dvtm-aristatus`` file for copyright and license 
 details.
