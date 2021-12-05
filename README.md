@@ -45,15 +45,6 @@ It shows information from these programs, so all of these are required:
 2. [iwd](https://iwd.wiki.kernel.org/)
 3. [ALSA](https://www.alsa-project.org)
 
-## dvtm-aristatus - dvtm launcher script using aristatus
-
-This is a launcher script for the dvtm terminal manager, which calls aristatus
-to print out information on the status bar.
-
-Dependencies:
-1. aristatus and all its requirements (listed above)
-2. [dvtm](https://www.brain-dump.org/projects/dvtm/)
-
 ## sfeedbar - sfeed integration into bemenu
 
 This scripts creates a menu from RSS feeds parsed by sfeed. It also allows 
@@ -73,8 +64,4 @@ Dependencies:
 
 apps-menu, arimail, aristatus, and sfeedbar are published under an 
 MIT/X11/Expat-type License. See ``LICENSE`` file for copyright and license 
-details.
-
-dvtm-aristatus is derivatve work from dvtm-status, published under the MIT/X
-Consortium License. See ``dvtm-aristatus`` file for copyright and license 
 details.
