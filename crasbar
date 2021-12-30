@@ -1,0 +1,12 @@
+#!/bin/sh
+# See LICENSE file for copyright and license details.
+
+task=$(NO_COLOR=1 cras | grep '#' | bemenu -p 'Tasks' -l 5 -i)
+tasknum=$(echo "$task" | cut -d ' ' -f 1 | sed -E 's/#([0-9]*?)/\1/')
+stat=$(echo "$task" | cut -d ' ' -f 2)
+
+if [ "$stat" = "[TODO]" ]; then
+	cras -t "$tasknum"
+else
+	cras -T "$tasknum"
+fi
