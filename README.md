@@ -42,8 +42,9 @@ status bar.
 
 It shows information from these programs, so all of these are required:
 1. [cras](https://sr.ht/~arivigo/cras)
-2. [iwd](https://iwd.wiki.kernel.org/)
-3. [ALSA](https://www.alsa-project.org)
+2. [schain](https://sr.ht/~arivigo/schain)
+3. [iwd](https://iwd.wiki.kernel.org/)
+4. [ALSA](https://www.alsa-project.org)
 
 ## sfeedbar - sfeed integration into bemenu
 
