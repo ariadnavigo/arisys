@@ -59,7 +59,7 @@ Dependencies:
 
 ## sfeedbar - sfeed integration into bemenu
 
-This scripts creates a menu from RSS feeds parsed by sfeed. It also allows 
+This script creates a menu from RSS feeds parsed by sfeed. It also allows 
 retrieval of updated RSS feeds.
 
 This script assumes sfeed to be set up like this, which is **not** the default
