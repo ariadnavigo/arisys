@@ -46,6 +46,17 @@ It shows information from these programs, so all of these are required:
 3. [iwd](https://iwd.wiki.kernel.org/)
 4. [ALSA](https://www.alsa-project.org)
 
+## cras-menu - Menu for simple management of cras task lists
+
+This script launches a bemenu menu that shows all tasks in your default cras
+task list file (i.e. the file set on the ``CRAS_DEF_FILE`` environment
+variable). Selecting any of the entries will toggle its status between
+**[TODO]** and **[DONE]**.
+
+Dependencies:
+1. [cras](https://sr.ht/~arivigo/cras)
+2. [bemenu](https://github.com/Cloudef/bemenu)
+
 ## sfeedbar - sfeed integration into bemenu
 
 This scripts creates a menu from RSS feeds parsed by sfeed. It also allows 
