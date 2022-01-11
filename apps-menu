@@ -8,7 +8,9 @@ usage() {
 	exit 1
 }
 
-[ "$1" ] || usage
+if [ -z "$1" ]; then 
+	usage
+fi
 
 sort "$1" | sed '/^$/d' | bemenu -p 'Apps' | xargs swaymsg exec
 

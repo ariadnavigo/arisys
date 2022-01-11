@@ -18,6 +18,9 @@ done
 url=$(sfeed_plain "$HOME/.cache/sfeed/feeds/"* | sort -r -k 1 | \
       bemenu -p 'Feeds' -l 20 -i | \
       sed -n 's@^.* \([a-zA-Z]*://\)\(.*\)$@\1\2@p')
-[ "$url" ] && xdg-open "$url"
+
+if [ "$url" ]; then 
+	xdg-open "$url"
+fi
 
 exit 0
