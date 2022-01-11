@@ -2,7 +2,7 @@
 # See LICENSE file for copyright and license details.
 
 if tasklst=$(NO_COLOR=1 cras 2>/dev/null | grep '#'); then
-	task=$(printf '[Exit]\n%s' "$tasklst" | bemenu -p 'Tasks' -l 5 -i)
+	task=$(printf '[Exit]\n%s' "$tasklst" | bemenu -p 'Tasks' -l 10 -i)
 else
 	exit 1
 fi
