@@ -15,9 +15,11 @@ tasknum=$(echo "$task" | cut -d ' ' -f 1 | sed -E 's/#([0-9]*?)/\1/')
 stat=$(echo "$task" | cut -d ' ' -f 2)
 
 if [ "$stat" = "[TODO]" ]; then
-	cras -t "$tasknum" > /dev/null
+	flag='-t'
 else
-	cras -T "$tasknum" > /dev/null
+	flag='-T'
 fi
+
+cras "$flag" "$tasknum" > /dev/null
 
 exit 0
