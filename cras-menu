@@ -15,9 +15,9 @@ tasknum=$(echo "$task" | cut -d ' ' -f 1 | sed -E 's/#([0-9]*?)/\1/')
 stat=$(echo "$task" | cut -d ' ' -f 2)
 
 if [ "$stat" = "[TODO]" ]; then
-	cras -t "$tasknum"
+	cras -t "$tasknum" > /dev/null
 else
-	cras -T "$tasknum"
+	cras -T "$tasknum" > /dev/null
 fi
 
 exit 0
