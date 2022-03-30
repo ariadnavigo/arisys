@@ -25,5 +25,3 @@ date_str=$(date +'%Y-%m-%d %H:%M %p')
 
 echo "| ${schain_str:---} | ${cras_str:---} | wifi: ${wifi_str:---}"\
      "| audio: $aud_str | $date_str"
-
-exit 0
