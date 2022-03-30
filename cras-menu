@@ -21,5 +21,3 @@ else
 fi
 
 cras "$flag" "$tasknum" > /dev/null
-
-exit 0
