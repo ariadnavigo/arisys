@@ -15,5 +15,3 @@ sync() {
 sync
 neomutt
 sync
-
-exit 0

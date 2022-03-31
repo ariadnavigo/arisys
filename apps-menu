@@ -13,5 +13,3 @@ if [ -z "$1" ]; then
 fi
 
 sort "$1" | sed '/^$/d' | bemenu -p 'Apps' | xargs swaymsg exec
-
-exit 0

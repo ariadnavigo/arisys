@@ -1,6 +1,8 @@
 #!/bin/sh
 # See LICENSE file for copyright and license details.
 
+set -e
+
 if tasklst=$(NO_COLOR=1 cras 2>/dev/null | grep '#'); then
 	task=$(printf '[Exit]\n%s' "$tasklst" | bemenu -p 'Tasks' -l 10 -i)
 else

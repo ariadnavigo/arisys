@@ -22,5 +22,3 @@ url=$(sfeed_plain "$HOME/.cache/sfeed/feeds/"* | sort -r -k 1 | \
 if [ "$url" ]; then 
 	xdg-open "$url"
 fi
-
-exit 0
