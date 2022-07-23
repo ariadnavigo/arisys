@@ -6,8 +6,6 @@ usage() {
 	exit 1
 }
 
-schain_str=$(schain -s 2>/dev/null)
-
 if cras_out=$(NO_COLOR=1 cras 2>/dev/null); then
 	cras_done=$(echo "$cras_out" | grep -c '\[DONE\]')
 	cras_tot=$(($(echo "$cras_out" | wc -l) - 1))
@@ -23,5 +21,4 @@ aud_str=$(amixer sget Master | tail -n1 | \
 
 date_str=$(date +'%Y-%m-%d %H:%M %p')
 
-echo "| ${schain_str:---} | ${cras_str:---} | wifi: ${wifi_str:---}"\
-     "| audio: $aud_str | $date_str"
+echo "| ${cras_str:---} | wifi: ${wifi_str:---} | audio: $aud_str | $date_str"
