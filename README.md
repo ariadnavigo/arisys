@@ -23,26 +23,14 @@ Dependencies:
 1. [sway WM](https://swaywm.org/)
 2. [bemenu](https://github.com/Cloudef/bemenu)
 
-## arimail - Start email setup with IMAP support
-
-This script launches all commands required to an email setup based on neomutt
-and isync, such that everything is guaranteed to be sync'ed up, including
-delete operations.
-
-It requires setting up ``$IMAP_CONFIG`` to isync's configuration path.
-
-Dependencies:
-1. [neomutt](https://neomutt.org)
-2. [isync](https://isync.sourceforge.io/)
-
 ## aristatus - swaybar script
 
 This script is in charge of the information I want to be printed out on sway's
 status bar.
 
 It shows information from these programs, so all of these are required:
-1. [cras](https://sr.ht/~arivigo/cras)
-2. [schain](https://sr.ht/~arivigo/schain)
+1. [cras](https://github.com/ariadnavigo/cras)
+2. [schain](https://github.com/ariadnavigo/schain)
 3. [iwd](https://iwd.wiki.kernel.org/)
 4. [ALSA](https://www.alsa-project.org)
 
@@ -54,22 +42,7 @@ variable). Selecting any of the entries will toggle its status between
 **[TODO]** and **[DONE]**.
 
 Dependencies:
-1. [cras](https://sr.ht/~arivigo/cras)
-2. [bemenu](https://github.com/Cloudef/bemenu)
-
-## sfeedbar - sfeed integration into bemenu
-
-This script creates a menu from RSS feeds parsed by sfeed. It also allows 
-retrieval of updated RSS feeds.
-
-This script assumes sfeed to be set up like this, which is **not** the default
-configuration. Please refer to sfeed's documentation to set it up like this:
-
-* ``$HOME/.config/sfeed/sfeedrc``: location of sfeed's master config file
-* ``$HOME/.cache/sfeed/feeds/``: sfeed's cache.
-
-Dependencies:
-1. [sfeed](https://codemadness.org/git/sfeed/log.html)
+1. [cras](https://github.com/ariadnavigo/cras)
 2. [bemenu](https://github.com/Cloudef/bemenu)
 
 ## Licenses
