@@ -2,7 +2,7 @@
 # See LICENSE file for copyright and license details.
 
 EMOJI_VER="15.0"
-EMOJI_DB="$HOME/.emoji-db.txt"
+EMOJI_DB="${EMOJI_DB:-$HOME/.emoji-db.txt}"
 
 getemojidb() {
 	echo 'Downloading emoji database...' >&2
