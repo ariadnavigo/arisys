@@ -4,6 +4,11 @@
 EMOJI_VER="15.0"
 EMOJI_DB="${EMOJI_DB:-$HOME/.emoji-db.txt}"
 
+usage() {
+	echo 'usage: emoji-menu [-f]' >&2
+	exit 1
+}
+
 getemojidb() {
 	echo 'Downloading emoji database...' >&2
 	curl "https://unicode.org/Public/emoji/$EMOJI_VER/emoji-test.txt" \
@@ -13,7 +18,14 @@ getemojidb() {
 	> "$EMOJI_DB"
 }
 
-if ! [ -f "$EMOJI_DB" ]; then
+while getopts :f opt; do
+	case "$opt" in
+	f) force=1 ;;
+	?) usage ;;
+	esac
+done
+
+if [ "$force" ] || ! [ -f "$EMOJI_DB" ]; then
 	getemojidb
 fi
 
