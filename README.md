@@ -45,8 +45,19 @@ Dependencies:
 1. [cras](https://github.com/ariadnavigo/cras)
 2. [bemenu](https://github.com/Cloudef/bemenu)
 
+## emoji-menu - Menu to copy emojis
+
+This script allows the user copy emojis from a bemenu menu. It retrieves the
+official list from the Unicode website, storing it into ``~/.emoji-db.txt``.
+Selecting any entry will copy the emoji into wl-copy's clipboard.
+
+Dependencies:
+1. [curl](https://curl.se)
+2. [bemenu](https://github.com/Cloudef/bemenu)
+3. [wl-copy](https://github.com/bugaevc/wl-clipboard)
+
 ## Licenses
 
-apps-menu, arimail, aristatus, and sfeedbar are published under an 
+apps-menu, aristatus, cras-menu, and emoji-menu are published under an 
 MIT/X11/Expat-type License. See ``LICENSE`` file for copyright and license 
 details.

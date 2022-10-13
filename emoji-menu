@@ -1,0 +1,21 @@
+#!/bin/sh
+# See LICENSE file for copyright and license details.
+
+EMOJI_VER="15.0"
+EMOJI_DB="$HOME/.emoji-db.txt"
+
+getemojidb() {
+	echo 'Downloading emoji database...' >&2
+	curl "https://unicode.org/Public/emoji/$EMOJI_VER/emoji-test.txt" \
+	| awk '!/^#/ && !/^$/ { 
+	           match($0, /^.*?# (.*?)$/, arr)
+		   print arr[1] 
+               }' \
+	> "$EMOJI_DB"
+}
+
+if ! [ -f "$EMOJI_DB" ]; then
+	getemojidb
+fi
+
+bemenu -p 'Emoji:' -l 30 < "$EMOJI_DB" | cut -d ' ' -f 1 | wl-copy
