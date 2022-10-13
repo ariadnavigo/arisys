@@ -49,8 +49,9 @@ Dependencies:
 ## emoji-menu - Menu to copy emojis
 
 This script allows the user copy emojis from a bemenu menu. It retrieves the
-official list from the Unicode website, storing it into ``~/.emoji-db.txt``.
-Selecting any entry will copy the emoji into wl-copy's clipboard.
+official list from the Unicode website, storing it into ``~/.emoji-db.txt``. It
+ignores any emoji officially listed as "unqualified." Selecting any entry will 
+copy the emoji into wl-copy's clipboard.
 
 Dependencies:
 1. [bemenu](https://github.com/Cloudef/bemenu)

@@ -7,7 +7,7 @@ EMOJI_DB="$HOME/.emoji-db.txt"
 getemojidb() {
 	echo 'Downloading emoji database...' >&2
 	curl "https://unicode.org/Public/emoji/$EMOJI_VER/emoji-test.txt" \
-	| awk '!/^#/ && match($0, /# .*?$/) {
+	| awk '!/^#/ && !/unqualified/ && match($0, /# .*?$/) {
 		   print substr($0, RSTART + 2, RLENGTH - 2)
                }' \
 	> "$EMOJI_DB"
