@@ -20,8 +20,8 @@ menu to run any of those listed commands on sway. Very handy if assigned to a
 key binding.
 
 Dependencies:
-1. [sway WM](https://swaywm.org/)
-2. [bemenu](https://github.com/Cloudef/bemenu)
+1. [bemenu](https://github.com/Cloudef/bemenu)
+2. [sway WM](https://swaywm.org/)
 
 ## aristatus - swaybar script
 
@@ -29,10 +29,11 @@ This script is in charge of the information I want to be printed out on sway's
 status bar.
 
 It shows information from these programs, so all of these are required:
-1. [cras](https://github.com/ariadnavigo/cras)
-2. [schain](https://github.com/ariadnavigo/schain)
+1. [ALSA](https://www.alsa-project.org) (or any high-level audio layer that 
+   provides an ALSA-compatible API, e.g. PulseAudio, PipeWire, etc.)
+2. [cras](https://github.com/ariadnavigo/cras)
 3. [iwd](https://iwd.wiki.kernel.org/)
-4. [ALSA](https://www.alsa-project.org)
+4. [schain](https://github.com/ariadnavigo/schain)
 
 ## cras-menu - Menu for simple management of cras task lists
 
@@ -42,8 +43,8 @@ variable). Selecting any of the entries will toggle its status between
 **[TODO]** and **[DONE]**.
 
 Dependencies:
-1. [cras](https://github.com/ariadnavigo/cras)
-2. [bemenu](https://github.com/Cloudef/bemenu)
+1. [bemenu](https://github.com/Cloudef/bemenu)
+2. [cras](https://github.com/ariadnavigo/cras)
 
 ## emoji-menu - Menu to copy emojis
 
@@ -52,8 +53,8 @@ official list from the Unicode website, storing it into ``~/.emoji-db.txt``.
 Selecting any entry will copy the emoji into wl-copy's clipboard.
 
 Dependencies:
-1. [curl](https://curl.se)
-2. [bemenu](https://github.com/Cloudef/bemenu)
+1. [bemenu](https://github.com/Cloudef/bemenu)
+2. [curl](https://curl.se)
 3. [wl-copy](https://github.com/bugaevc/wl-clipboard)
 
 ## Licenses
