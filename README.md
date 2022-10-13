@@ -53,6 +53,9 @@ official list from the Unicode website, storing it into ``~/.emoji-db.txt``. It
 ignores any emoji officially listed as "unqualified." Selecting any entry will 
 copy the emoji into wl-copy's clipboard.
 
+Passing ``-f`` forces the download of the database regardless whether it's
+already stored.
+
 Dependencies:
 1. [bemenu](https://github.com/Cloudef/bemenu)
 2. [curl](https://curl.se)
