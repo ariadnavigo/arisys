@@ -1,6 +1,8 @@
 #!/bin/sh
 # See LICENSE file for copyright and license details.
 
+set -e
+
 usage() {
 	echo 'usage: aristatus' >&2
 	exit 1
