@@ -18,7 +18,7 @@ fi
 wifi_str=$(iwctl station wlan0 show | grep 'Connected network' | \
            sed -E 's/^.*Connected network[[:space:]]*//; s/[[:space:]]*?$//')
 
-aud_str=$(amixer sget Master | tail -n1 | \
+aud_str=$(amixer sget Master | tail -n 1 | \
           sed -E 's/.*\[(.*%)\].*\[(on|off)\].*/\1 \2/')
 
 date_str=$(date +'%Y-%m-%d %H:%M %p')
