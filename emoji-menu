@@ -36,4 +36,4 @@ if [ "$force" ] || ! [ -f "$EMOJI_DB" ]; then
 	getemojidb
 fi
 
-bemenu -p 'Emoji:' -l 30 < "$EMOJI_DB" | cut -d ' ' -f 1 | wl-copy
+bemenu -p 'Emoji:' -l 30 < "$EMOJI_DB" | cut -d ' ' -f 1 | tr -d '\n' | wl-copy
