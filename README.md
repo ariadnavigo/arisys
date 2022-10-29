@@ -31,9 +31,8 @@ status bar.
 It shows information from these programs, so all of these are required:
 1. [ALSA](https://www.alsa-project.org) (or any high-level audio layer that 
    provides an ALSA-compatible API, e.g. PulseAudio, PipeWire, etc.)
-2. [cras](https://github.com/ariadnavigo/cras)
+2. [cras 2.2+](https://github.com/ariadnavigo/cras)
 3. [iwd](https://iwd.wiki.kernel.org/)
-4. [schain](https://github.com/ariadnavigo/schain)
 
 ## cras-menu - Menu for simple management of cras task lists
 
