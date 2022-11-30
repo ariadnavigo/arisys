@@ -18,6 +18,8 @@ wifi_str=$(iwctl station wlan0 show | grep 'Connected network' | \
 aud_str=$(amixer sget Master | tail -n 1 | \
           sed -E 's/.*\[(.*%)\].*\[(on|off)\].*/\1 \2/')
 
+batt_str=$(acpi | awk '{ print $3, $4 }' | tr -d ',[:lower:]')
+
 date_str=$(date +'%Y-%m-%d %H:%M %p')
 
-echo "| ${cras_str:---} | wifi: ${wifi_str:---} | audio: $aud_str | $date_str"
+echo "| ${cras_str:---} | wifi: ${wifi_str:---} | audio: $aud_str | batt: $batt_str | $date_str"
