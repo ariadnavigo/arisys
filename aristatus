@@ -22,5 +22,5 @@ aud_str=$(amixer sget Master | tail -n 1 | \
 
 date_str=$(date +'%Y-%m-%d %H:%M %p')
 
-echo "| ${cras_str:---} | wifi: ${wifi_str:---} | batt: $batt_str " \
+echo "| ${cras_str:---} | wifi: ${wifi_str:---} | batt: $batt_str" \
      "| audio: $aud_str | $date_str"
